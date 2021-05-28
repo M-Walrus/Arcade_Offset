@@ -2,7 +2,7 @@ Street Fighter Alpha 2 Euro 960229 Training Edition by el_goe:
 
         [Details]
 
-            -Enables invinsibility and unlimited time.
+            -Enables infinite health and unlimited time.
             -Coin Mode set to free play by default in the mra file.
             -Difficulty set to Hard 2 by default in the mra file.
             -Game Speed set to Turbo 2 by default in the mra file.
