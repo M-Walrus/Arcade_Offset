@@ -1,0 +1,108 @@
+<!--          FPGA compatible core for Capcom arcade hardware by Jotego
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not mantained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) Jose Tejada, 2021. Please support the author
+              Patreon: https://patreon.com/topapate
+              Paypal:  https://paypal.me/topapate
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with legally
+              obtained ROM dumps or with compatible homebrew software.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="jotego" webpage="https://patreon.com/topapate" source="https://github.com/jotego" twitter="@topapate"/>
+    <name>Marvel Vs. Capcom: Clash of Super Heroes (Japan 980112)[Onslaught Edition]</name>
+    <setname>mvscjr1</setname>
+    <rbf>jtcps2</rbf>
+    <year>1998</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>horizontal</rotation>
+    <region>Japan</region>
+    <mraauthor>jotego,atrac17</mraauthor>
+    <mameversion>0229</mameversion>
+    <mratimestamp>20210527</mratimestamp>
+    <platform>CPS-2</platform>
+    <rom index="0" zip="mvscjr1.zip|mvsc.zip|qsound.zip" type="merged" md5="None" address="0x30000000">
+        <part>
+        00 10 00 11 00 31 00 b1 
+        ff ff ff ff ff ff ff ff 
+        32 ff 00 02 04 06 26 28 
+        2a 2c 2e 00 00 30 02 04 
+        08 30 ff ff ff ff ff ff 
+        fc ff ff ff
+        </part>
+        <!-- key - starts at 0x0 -->
+        <part name="mvscj.key" crc="9dedbcaf"/>
+        <!-- maincpu - starts at 0x14 -->
+        <part name="mvcj.03" crc="2164213f"/>
+        <part name="mvcj.04" crc="c905c86f"/>
+        <part name="mvc.05" crc="7db71ce9"/>
+        <part name="mvc.06" crc="4b0b6d3e"/>
+        <part name="mvc.07" crc="c3baa32b"/>
+        <part name="mvc.08" crc="bc002fcd"/>
+        <part name="mvc.09" crc="c67b26df"/>
+        <part name="mvc.10" crc="0fdd1e26"/>
+        <!-- audiocpu - starts at 0x400014 -->
+        <part name="mvc.01" crc="41629e95"/>
+        <part name="mvc.02" crc="963abf6b"/>
+        <!-- qsound - starts at 0x440014 -->
+        <interleave output="16">
+            <part name="mvc.11m" crc="850fe663" map="12"/>
+        </interleave>
+        <interleave output="16">
+            <part name="mvc.12m" crc="7ccb1896" map="12"/>
+        </interleave>
+        <!-- gfx - starts at 0xC40014 -->
+        <interleave output="64">
+            <part name="mvc.13m" crc="fa5f74bc" map="00000021"/>
+            <part name="mvc.15m" crc="71938a8f" map="00002100"/>
+            <part name="mvc.17m" crc="92741d07" map="00210000"/>
+            <part name="mvc.19m" crc="bcb72fc6" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="mvc.14m" crc="7f1df4e4" map="00000021"/>
+            <part name="mvc.16m" crc="90bd3203" map="00002100"/>
+            <part name="mvc.18m" crc="67aaf727" map="00210000"/>
+            <part name="mvc.20m" crc="8b0bade8" map="21000000"/>
+        </interleave>
+        <!-- QSound firmware - starts at 0x2C40014 -->
+        <part name="dl-1425.bin" crc="d6cf5ef5" length="0x2000"/>
+        <!-- Total 0x2C42014 bytes - 45320 kBytes -->
+        <patch offset="0x0B0F4">49 62</patch>
+        <patch offset="0x0BD48">5F D4 BD 63 5C 6C</patch>
+        <patch offset="0x0C232">FA FE 31 F6</patch>
+        <patch offset="0x0C2DA">E7 36</patch>
+        <patch offset="0x0C316">36 8B 16 4D 70 E1</patch>
+        <patch offset="0x012540">05 B7 82 ED 4A 85</patch>
+        <patch offset="0x012F44">DB CF</patch>
+        <patch offset="0x012F66">4A FE</patch>
+        <patch offset="0x012F88">14 B2</patch>
+        <patch offset="0x012FAA">80 E7</patch>
+        <patch offset="0x015D2C">B8 51 AF 94</patch>
+        <patch offset="0x01AAD8">4D 2A</patch>
+        <patch offset="0x026830">95 83</patch>
+        <patch offset="0x02831E">6E C0 10 19 89 A6 86 1A 2C 44 39 31 36 2F AC AA 95 F6 31 F2 78 CF F4 F4 9B 08 21 04 C8 AD 01 F9</patch>
+        <patch offset="0x0D4172">11 2F 04 58 D1 91</patch>
+        <patch offset="0x0E1BC6">41 00 20 00 22 00 24 00 26 00 28 00 30 01 E0 00 00 00 00 00 3C 9C 22 B8 8C CE 95 77 85 95 31 0F 44 80 83 0D A5 7E 3E 1B 98 85 AE 8F AB 73 02 8C FF 50 F0 10 A5 F7 53 EA 6D BB E3 A5 0E C6 3E 56 7A C3 B1 ED 07 CE D7 AC 02 8A 2A 1D 19 1C 7C 5D 48 8E 6A C3 EB 3F FE 57 38 C3 F8 AE 18 E0 9E A2 27 C8 A2 7F 29 0C 56 E9 BE 9D DE 78 12 5D C0 05 2D 3B 57 C4 E5 C2 0D B6 17 07 F9 31 3B BC CD 8F D2 DD 46 CE 6C 6F DB AD EF E6 60 22 C4 7C CF BF EB E2 C7 13 B9 AA 41 9D 5C 57 07 2C 4D 25 7C C1 E1 40 17 10 EF 3F CF C2 82 CA BC 6C 39 FD 22 1B 86 9F C2 C3 2F 22 D7 BD 9F 92 A3 8D BE 99 55 7C 55 32 C6 4B 60 49 D5 FA 3C 5E 62 41 D9 DA 7C BE 01 56 E5 13 4B 65 65 17 4D 1D 27 34 CD 56 5A EE A2 CD 06 00 06 00 08 00 02 00 08 00 04 00 0A 00 0A 00 02 00 0E 00 02 00 04 00 06 00 14 00 0C 00 1C 00 18 00 10 00 10 00 20 00 10 00 12 00 14 00 16 00 1A 00 12 00 0E 00 1E 00 20 00 16 00 1E 00 16 00 12 00 20 00 06 00 0E 00 18 00 1A 00 20 00 12 00 1A 00 1E 00 04 00 1C 00 0E 00 16 00 1C 00 1E 00 14 00 1A 00 18 00 14 00 10 00 00 00 00 00 00 00 00 00 24 00 16 00 24 00 24 00 26 00 12 00 26 00 26 00 28 00 1A 00 28 00 28 00 0A 00 2A 00 2A 00 2A 00 02 00 2C 00 2C 00 2C</patch>
+        <patch offset="0x0E20FC">22</patch>
+        <patch offset="0x0E2162">08 00 22 00 22 00 22</patch>
+        <patch offset="0x0E2464">9A 20</patch>
+    </rom>
+    <rom index="1">
+        <part>00</part>
+    </rom>
+    <nvram index="2" size="128"/>
+    <buttons names="Light Punch,Middle Punch,Heavy Punch,Light Kick,Middle Kick,Heavy Kick,Start,Coin,Core Credits" default="Y,X,B,A,L,R,Select,Start,-" count="6"/>
+</misterromdescription>

@@ -1,0 +1,110 @@
+<!--          FPGA compatible core for Capcom arcade hardware by Jotego
+
+              This core is available for hardware compatible with MiST and MiSTer
+              Other FPGA systems may be supported by the time you read this.
+              This work is not mantained by the MiSTer project. Please contact the
+              core author for issues and updates.
+
+              (c) Jose Tejada, 2021. Please support the author
+              Patreon: https://patreon.com/topapate
+              Paypal:  https://paypal.me/topapate
+
+              The author does not endorse or participate in illegal distribution
+              of copyrighted material. This work can be used with legally
+              obtained ROM dumps or with compatible homebrew software.
+
+              This file license is GNU GPLv2.
+              You can read the whole license file in
+              https://opensource.org/licenses/gpl-2.0.php
+
+-->
+
+<misterromdescription>
+    <about author="jotego" webpage="https://patreon.com/topapate" source="https://github.com/jotego" twitter="@topapate"/>
+    <name>Super Street Fighter II Turbo (Asia 940223) [Training Edition]</name>
+    <setname>ssf2ta</setname>
+    <rbf>jtcps2</rbf>
+    <year>1994</year>
+    <manufacturer>Capcom</manufacturer>
+    <players>2</players>
+    <joystick>8-way</joystick>
+    <rotation>horizontal</rotation>
+    <region>Asia</region>
+    <mraauthor>jotego,atrac17,terminator2k2</mraauthor>
+    <mameversion>0229</mameversion>
+    <mratimestamp>20210527</mratimestamp>
+    <platform>CPS-2</platform>
+    <rom index="0" zip="ssf2ta.zip|ssf2t.zip|qsound.zip" type="merged" md5="None" address="0x30000000">
+        <part>
+        00 0e 00 0f 00 1f 00 5f 
+        ff ff ff ff ff ff ff ff 
+        32 ff 00 02 04 06 26 28 
+        2a 2c 2e 00 00 30 02 04 
+        08 30 ff ff ff ff ff ff 
+        fc ff ff ff
+        </part>
+        <!-- key - starts at 0x0 -->
+        <part name="ssf2ta.key" crc="c11fa8e9"/>
+        <!-- maincpu - starts at 0x14 -->
+        <part name="sfxa.03c" crc="04b9ff34"/>
+        <part name="sfxa.04a" crc="16ea5f7a"/>
+        <part name="sfxa.05" crc="53d61f0c"/>
+        <part name="sfxa.06a" crc="066d09b5"/>
+        <part name="sfxa.07" crc="a428257b"/>
+        <part name="sfxa.08" crc="39be596c"/>
+        <part name="sfx.09" crc="642fae3f"/>
+        <!-- audiocpu - starts at 0x380014 -->
+        <part name="sfx.01" crc="b47b8835"/>
+        <part name="sfx.02" crc="0022633f"/>
+        <!-- qsound - starts at 0x3C0014 -->
+        <interleave output="16">
+            <part name="sfx.11m" crc="9bdbd476" map="12"/>
+        </interleave>
+        <interleave output="16">
+            <part name="sfx.12m" crc="a05e3aab" map="12"/>
+        </interleave>
+        <!-- gfx - starts at 0x7C0014 -->
+        <interleave output="64">
+            <part name="sfx.13m" crc="cf94d275" map="00000021"/>
+            <part name="sfx.15m" crc="5eb703af" map="00002100"/>
+            <part name="sfx.17m" crc="ffa60e0f" map="00210000"/>
+            <part name="sfx.19m" crc="34e825c5" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="sfx.14m" crc="b7cc32e7" map="00000021"/>
+            <part name="sfx.16m" crc="8376ad18" map="00002100"/>
+            <part name="sfx.18m" crc="f5b1b336" map="00210000"/>
+            <part name="sfx.20m" crc="459d5c6b" map="21000000"/>
+        </interleave>
+        <interleave output="64">
+            <part name="sfx.21m" crc="e32854af" map="00000021"/>
+            <part name="sfx.23m" crc="760f2927" map="00002100"/>
+            <part name="sfx.25m" crc="1ee90208" map="00210000"/>
+            <part name="sfx.27m" crc="f814400f" map="21000000"/>
+        </interleave>
+        <!-- QSound firmware - starts at 0x17C0014 -->
+        <part name="dl-1425.bin" crc="d6cf5ef5" length="0x2000"/>
+        <!-- Total 0x17C2014 bytes - 24328 kBytes -->
+        <patch offset="0x01a1a">7D B1 C7 12 54 CD DB 0B 25 82</patch>
+        <patch offset="0x039e6">B3 6C 1A 25 AB C4</patch>
+        <patch offset="0x04a04">5D 6D</patch>
+        <patch offset="0x04a28">BA 8A</patch>
+        <patch offset="0x04ab8">87 AF D6 53 14 14 F7 B6 C4 FD 6F 00 16 79 2D 83 BB 86 03 EC BD 21 F3 72 51 0C C3 8F CA 72 53 23 DE DA F8 64</patch>
+        <patch offset="0x04df0">B3 2A</patch>
+        <patch offset="0x082d0">7F 41</patch>
+        <patch offset="0x0e33e">83 4B</patch>
+        <patch offset="0x0e99c">1C 1D</patch>
+        <patch offset="0x0ed00">34 09 64 2A 05 AA 3C 7A A4 55 BB F4 4F 2D</patch>
+        <patch offset="0x0fed0">4E 08</patch>
+        <patch offset="0x0be68e">B1 C7</patch>
+        <patch offset="0x0bebee">E3 1B</patch>
+        <patch offset="0x0ccc50">EF A8 EA 44 50 05 6D 3F 9E 0B 8E 3F CC E1 7E E2</patch>
+        <patch offset="0x0d6ac0">BD 3B 65 58 25 F4 16 E1 44 3D CF 73 31 71 17 B4 6F FF 6F 69 04 F3 CF 60 32 02 DB 80 CB 32 C2 CB 8F 38 B6 6E 36 65 25 B8 AA 61 9D 93 D1 79 89 03 8C F1 0D E2 D4 15 4D 50 7F 36 8B 21 42 13 CC 8D 1B 5B F6 43 46 5A FB A1 22 F5 72 8D 0D 45 E5 22</patch>
+        <patch offset="0x0d6ca0">85 0E 43 EC C8 1F 63 AF CB 6A 61 78 78 DA 5B 73 45 B2 FC 9A B2 D5 91 E5 63 A9 70 3B F1 07 6B 2A E4 1A 09 8E 87 CF B1 52 A8 14 17 DC 7B 79 EF A1 42 75 2E F2 46 96 38 1A 64 B8 43 C2 61 B1 DF 4F D5 45 68 2F</patch>
+    </rom>
+    <rom index="1">
+        <part>00</part>
+    </rom>
+    <nvram index="2" size="128"/>
+    <buttons names="Light Punch,Middle Punch,Heavy Punch,Light Kick,Middle Kick,Heavy Kick,Start,Coin,Core Credits" default="Y,X,B,A,L,R,Select,Start,-" count="6"/>
+</misterromdescription>
