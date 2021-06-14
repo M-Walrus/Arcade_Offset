@@ -18,7 +18,7 @@ Progear Red Label Halfway to Hell (Japan 160117) | CPS-2         | [**View Readm
 
 # Patched MRA Format
 
-While most of this should be self explanitory, this is the provided layout used. Patches are applied to the loaded roms from `rom index="0"`. Addional information may be provided from "soft dip" settings in the eeprom or nvm (nvram) save file. The hex is taken from "soft dip" settings and appllied to `rom index="02"`.
+While most of this should be self explanitory, this is the provided layout used. Patches are applied to the loaded roms from `rom index="0"`. Additional information may be provided from "soft dip" settings saved to the eeprom/nvram save `.nvm` file. The hex is taken from "soft dip" settings and appllied to `rom index="02"`.
 
 
         <misterromdescription>
@@ -47,7 +47,7 @@ While most of this should be self explanitory, this is the provided layout used.
                 <!-- example - starts at 0x14 -->
                 <part name="example.01" crc="91011121"/>
                 <!-- Total 0x2C42014 bytes - XXXXX kBytes -->
-                <patch 0x0>"hex information"</patch>
+                <patch offset="0x0">"hex information"</patch>
             </rom>
             <rom index="1">
                 <part>00=horizontal / 01=vertical / 02= 4-Way Joystick</part>
