@@ -11,9 +11,10 @@ This section will be expanded at a later date.
 
 Title           |  Core     | Information
 ---------------|-------------|----------
-Super Street Fighter II: The New Legacy [Beta 0.4]   | CPS-2        | [**View Readme**](https://github.com/atrac17/CPS2_MRA_Patches/blob/main/Readme/Super%20Street%20Fighter%20II%20The%20New%20Legacy%20%5BBeta%200.4%5D.md)
-Super Street Fighter II: The New Legacy [Beta 0.5] | CPS-2   | [**View Readme**](https://github.com/atrac17/CPS2_MRA_Patches/blob/main/Readme/Super%20Street%20Fighter%20II%20The%20New%20Legacy%20%5BBeta%200.5%5D.md)
+Super Street Fighter II: The New Legacy (Beta 0.4)   | CPS-2        | [**View Readme**](https://github.com/atrac17/CPS2_MRA_Patches/blob/main/Readme/Super%20Street%20Fighter%20II%20The%20New%20Legacy%20%5BBeta%200.4%5D.md)
+Super Street Fighter II: The New Legacy (Beta 0.5) | CPS-2   | [**View Readme**](https://github.com/atrac17/CPS2_MRA_Patches/blob/main/Readme/Super%20Street%20Fighter%20II%20The%20New%20Legacy%20%5BBeta%200.5%5D.md)
 Progear Red Label Halfway to Hell (Japan 160117) | CPS-2         | [**View Readme**](https://github.com/atrac17/CPS2_MRA_Patches/blob/main/Readme/Progear%20Red%20Label%20Halfway%20to%20Hell%20%28Japan%20160117%29.md)
+Street Fighter Zero (CPS Changer 1.5, Japan 951020) | CPS-1.5         | [**View Readme**](https://github.com/atrac17/Arcade_Offset/blob/20e60ff1893c467418b0f0c0a2eff679d4cb7523/Readme/CPS-1.5/Street%20Fighter%20Zero%20(CPS%20Changer%201.5,%20Japan%20951020).md)
 
 
 # Patched MRA Format
